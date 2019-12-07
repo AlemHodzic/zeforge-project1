@@ -1,0 +1,717 @@
+/*default settings*/
+* {
+  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a{
+  color:white;
+  transition: 2s;
+}
+
+/*button za skrollanje na vrh*/
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+#myBtn:hover {
+  background-color: #555;
+}
+
+/*Iznad navigacije - main logo, rezervacije, mail itd*/
+header{
+  background-color: #252525;
+  width: 100%;
+  height: 80px;
+}
+@keyframes alem {
+from {transform: translatey(-100px);}
+to {transform: translatey(0px);}
+}
+.animation{
+  font-weight: bold;
+  animation: alem 2s;
+}
+@keyframes alem2 {
+from {transform: translatey(300px);}
+to {transform: translatey(0px);}
+}
+.animation2{
+  animation: alem2 3.2s;
+}
+@keyframes alem3 {
+from {transform: translatex(-550px);}
+to {transform: translatex(0px);}
+}
+.animation3{
+  animation: alem3 1.2s;
+}
+@keyframes alem4 {
+from {transform: translatex(550px);}
+to {transform: translatex(0px);}
+}
+.animation4{
+  animation: alem4 1.2s;
+}
+
+.box p{
+  color:#5c5959;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-header-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.iznad-header-container{
+  height: 30%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box{
+  margin-left: 8%;
+  margin-right: 8%;
+}
+.phone-logo, .mail-logo{
+  width: 35px;
+  position: relative;
+  top: 45px;
+  left:-45px;
+}
+.box1{
+  margin-top: 55px;
+}
+/*NAVIGACIJA, BUTTONI */
+nav{
+  width: 100%;
+  height: 35px;
+  background-color: #252525;
+}
+.container-nav{
+  display: flex;
+  justify-content: center;
+  color: white;
+  align-items: center;
+}
+.navigacija-linkovi{
+  margin-left: 22px;
+  margin-right: 22px;
+  height: 25px;
+
+}
+.button {
+  text-align: center;
+  cursor: pointer;
+}
+.home-link{
+  width: 70px;
+}
+.accom-link{
+  width: 170px;
+}
+.package-link{
+  width: 150px;
+}
+.contact-link{
+  width: 90px;
+}
+.button::after {
+content: "";
+display: block;
+height: 3.5px;
+width: 100%;
+background-color: #AE7422;
+position: relative;
+top: 9px;
+transform: scale(0);
+transition: 0.3s;
+}
+.button:hover::after {
+transform: scale(1);
+}
+/*ISPOD NAVIGACIJE - POZADINA, BOOKING BOX ETC */
+section{
+  height: 700px;
+  width: 100%;
+  background-image: url(img/hotel-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.naslov{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 80px;
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+}
+.naslov h1{
+  font-size: 65px;
+  font-weight: bold;
+   text-shadow: 3px 4px black;
+}
+.naslov span{
+  font-size: 65px;
+  color: #e6982c;
+  font-weight: bold;
+}
+.naslov p{
+  font-style: italic;
+}
+
+.section-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 760px;
+  overflow: hidden;
+}
+.availability-box{
+
+  box-shadow: 0px 0px 12px 1px #E6982C;
+  width: 40%;
+  height: 150px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+}
+.availability-box:hover{
+  transition: 1s;
+  transform: scale(1.05);
+}
+/*TEMPERATURA BOX*/
+.temperatura-box{
+  width: 10%;
+  height: 150px;
+  background-color: #e6982c;
+  margin-left: 2%;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+}
+.temperatura-box:hover{
+  background-color: #d47b00;
+  transition: 1s;
+  transform: scale(1.1);
+}
+.day{
+  width: 50px;
+  height: 23.5px;
+}
+.year{
+  margin-left: 10px;
+  width: 50px;
+  height: 23.5px;
+}
+
+/*CHECK-IN, CHECK-OUT BOX */
+.availability-box h2{
+  font-size: 20px;
+  position: relative;
+  top: 5px;
+  left: 25px;
+}
+.availability-box h3{
+  font-size: 17px;
+  position: relative;
+  left: 25px;
+
+}
+.container-time{
+  display: flex;
+  justify-content: space-between;
+}
+.inner-container1{
+  margin-top: 20px;
+  position: relative;
+  border-right: 1px solid grey;
+  width: 50%;
+}
+.inner-container2{
+  margin-top: 20px;
+  position: relative;
+}
+section input{
+  margin-right: 10px;
+  margin-left: 25px;
+}
+.check-button{
+  position: relative;
+  width: 100px;
+  height: 30px;
+  background-color: #e6982c;
+  top: 10px;
+  left: 25px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.check-button:hover{
+  background-color: #d47b00;
+  transition: 1s;
+  transform: scale(1.05);
+}
+.check-button p{
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+
+.about-us-container{
+  height: 360px;
+  width: 100%;
+  background-image: url(img/about-us-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.white-box h1{
+  color:white;
+  font-size: 40px;
+  font-weight:100;
+  margin:5px;
+}
+.white-box p{
+  color:white;
+  margin:15px;
+  text-align: center;
+}
+
+.white-box{
+  background-color: white;
+  background: rgba(1, 1, 1, 0.6);
+  width: 60%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+/*TRECI DIO STRANICE - SOBE, ITD*/
+main{
+  width: 100%;
+  height: 1150px;
+}
+/*AWESOME ROOMS*/
+.awesome-rooms-container{
+  height: 6%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-left:10px;
+}
+main .lijevi{
+  height: 100%;
+  width: 50%;
+}
+main .desni{
+  height: 100%;
+  width: 50%;
+}
+main h1{
+  font-size: 32px;
+  padding: 5px 5px 5px 0;
+  font-weight: bold;
+  color: #ae7422;
+}
+main img{
+  width: 950px;
+  height: 260px;
+  filter:grayscale(0.9);
+  transition: all .2s ease-in-out;
+}
+main img:hover{
+  transition: 1s;
+  filter:grayscale(0);
+  transform: scale(1.1);
+}
+
+.main-container{
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+  margin-top: 20px;
+}
+.prvi-dio{
+  width: 50%;
+  height: 80%;
+  overflow: hidden;
+}
+.drugi-dio{
+  width: 35%;
+  height: 100%;
+  margin-left: 15px;
+  overflow: hidden;
+  padding: 3px
+}
+.treci-dio{
+  width: 15%;
+  height: 50%;
+}
+
+/*FANCY LOBBY */
+
+.awesome-rooms-container1{
+  height: 6%;
+  width: 44%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.main-container1{
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+  margin-top: 20px;
+}
+.prvi-dio1{
+  width: 15%;
+  height: 80%;
+  overflow: hidden;
+}
+.drugi-dio1{
+  width: 35%;
+  margin-right: 25px;
+  overflow: hidden;
+  padding: 3px
+}
+.treci-dio1{
+  width: 50%;
+  height: 80%;
+    overflow: hidden;
+}
+.treci-dio1 img{
+  width: 1000px!important;
+  height: 260px!important;
+}
+
+/*CETVRTI DIO STRANICE, RADNICI, SEKCIJA IZNAD FOOTER-A*/
+
+.employee{
+  width: 100%;
+  height: 300px;
+  background-color: #e0dede;
+}
+.employee-container{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.profile{
+  margin-top: 22px;
+  width: 30%;
+  height: 85%;
+  margin-right: 15px;
+  margin-left: 15px;
+  overflow: hidden;
+}
+.profile-flex{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.profile img{
+  width: 100px;
+}
+.profile h4{
+  padding: 35px;
+  font-size: 20px;
+}
+.profile p{
+  font-size: 13px;
+  padding: 13px;
+}
+.ispod-h{
+  position: absolute;
+  margin-left: 122px;
+  margin-top: 25px;
+}
+/*FOOTER*/
+footer{
+  width: 100%;
+  height: 270px;
+  background-color: #222222;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.footer-container{
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+}
+.unutar-contact{
+  display: flex;
+  margin-top: 15px;
+}
+
+footer h3{
+  color: #e49b36;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+footer img{
+  width: 18px;
+  margin-right: 10px;
+}
+
+
+@media only screen and (max-width: 1000px){
+ *{
+   font-size: 13px;
+
+  }
+  body {
+    width: 90%;
+    margin-left: 15%;
+    overflow-x: hidden;
+  }
+  header{
+    height: 200px;
+  }
+  .box p{
+    font-size: 11px;
+  }
+
+  .main-header-container{
+    height: 60%;
+    position: relative;
+    top: 50px;
+  }
+  .iznad-header-container{
+    flex-direction: column;
+  }
+  .phone-logo, .mail-logo{
+    width: 25px;
+    top: 35px;
+  }
+  .box1{
+    position: relative;
+    top: 30px;
+  }
+  .box {
+    margin-top: -10px;
+  }
+  /*NAVIGACIJA, BUTTONI */
+  nav{
+    height: 230px;
+  }
+  .container-nav{
+flex-direction: column;
+  }
+  .navigacija-linkovi{
+    height: 25px;
+    margin: 5px 0;
+  }
+  .home-link, .bar-link:hover, .accom-link:hover, .package-link:hover, .special-link:hover, .contact-link:hover{
+      border-bottom: 5px solid #ae7422;
+  }
+  section{
+    height: 500px;
+  }
+
+  .naslov{
+    top: 30px;
+  }
+  .naslov h1{
+    font-size: 35px;
+     text-shadow: 2px 2px black;
+  }
+  .naslov span{
+    font-size: 45px;
+  }
+  .section-container{
+    height: 400px;
+  }
+  .availability-box{
+    width: 65%;
+    height: 160px;
+  }
+  /*TEMPERATURA BOX*/
+  .temperatura-box{
+    width: 20%;
+    margin-left: 4%;
+  }
+
+  /*CHECK-IN, CHECK-OUT BOX */
+  .availability-box h2{
+    font-size: 15px;
+    position: relative;
+    top: 10px;
+
+  }
+  .availability-box h3{
+    font-size: 14px;
+  }
+  main{
+    height: 1000px;
+  }
+  /*AWESOME ROOMS*/
+  main .lijevi{
+    height: 0;
+    width: 0;
+  }
+  main .desni{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  main h1{
+    font-size: 24px;
+  }
+  main img{
+    width: 650px;
+    height: 200px;
+  }
+
+  .main-container{
+    flex-direction: column;
+    height: 700px;
+    width: 100%;
+  }
+  .prvi-dio{
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .drugi-dio{
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+  }
+  .treci-dio{
+    width: 15%;
+    height: 50%;
+  }
+
+  /*FANCY LOBBY */
+
+  .awesome-rooms-container1{
+    height: 0%;
+    width: 100%;
+    margin-top: 0px;
+    text-align: center;
+    position: relative;
+    top: -250px;
+  }
+  .main-container1{
+    flex-direction: column;
+    height: 500px;
+    margin-top: 0px;
+    position: relative;
+    top: -330px;
+  }
+  .prvi-dio1{
+    width: 0%;
+    height: 50%;
+  }
+  .drugi-dio1{
+    width: 70%;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  .treci-dio1{
+    width: 70%;
+    height: 100%;
+    margin: 30px auto;
+  }
+
+  .about-us-container{
+    display: none;
+  }
+  .white-box{
+    display: none;
+  }
+
+  /*CETVRTI DIO STRANICE, RADNICI, SEKCIJA IZNAD FOOTER-A*/
+
+  .employee{
+    height: 500px;
+  }
+  .employee-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile{
+    width: 95%;
+    height: 100%;
+    margin-left: 50%;
+  }
+  .profile-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .profile img{
+    width: 70px;
+  }
+  .profile h4{
+    padding: 25px;
+  }
+  .profile p{
+    padding: 10px;
+    width: 50%;
+  }
+
+}
+
+
+
+
+
+/*alem hodzic*/
